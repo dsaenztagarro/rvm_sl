@@ -1,0 +1,7 @@
+DEPENDENCIES
+  rvm
+    path: .
+    metadata: true
+
+GRAPH
+  rvm (0.1.0)

@@ -16,3 +16,6 @@ suites:
     run_list:
       - recipe[rvm::default]
     attributes:
+      rvm:
+        user:
+          dir: /home/vagrant

@@ -15,7 +15,10 @@ suites:
   - name: default
     run_list:
       - recipe[rvm::default]
+      - recipe[rvm::rubies]
     attributes:
       rvm:
         user:
           dir: /home/vagrant
+        rubies:
+          version: 2.2.3

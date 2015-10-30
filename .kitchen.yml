@@ -19,6 +19,7 @@ suites:
     attributes:
       rvm:
         user:
-          dir: /home/vagrant
+          name: vagrant
+          password: vagrant
         rubies:
           version: 2.2.3

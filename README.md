@@ -1,9 +1,7 @@
 rvm Cookbook
 ============
-TODO: Enter the cookbook description here.
 
-e.g.
-This cookbook makes your favorite breakfast sandwich.
+Manages system-wide and per-user RVMs and manages installed Rubies.
 
 Requirements
 ------------

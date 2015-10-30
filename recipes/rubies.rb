@@ -8,8 +8,6 @@
 #
 
 user_name = node['rvm']['user']['name']
-user_password = node['rvm']['user']['password']
-home = "/home/#{user_name}"
 
 ruby_version = node['rvm']['rubies']['version']
 

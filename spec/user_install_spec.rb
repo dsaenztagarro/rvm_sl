@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe 'rvm::default' do
+describe 'rvm::user_install' do
   let(:home) { '/home/vagrant' }
 
   let(:chef_run) do

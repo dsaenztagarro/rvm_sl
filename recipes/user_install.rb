@@ -13,11 +13,13 @@ home = "/home/#{user_name}"
 
 package %w(gnupg curl)
 
+keyserver = node['rvm']['keyserver']
+recv_keys = node['rvm']['recv-keys']
+
 ruby_block 'install_rvm' do
   block do
     cmd = Mixlib::ShellOut.new(
-      'gpg --keyserver hkp://keys.gnupg.net ' \
-      '--recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3',
+      "gpg --keyserver #{keyserver} --recv-keys #{recv_keys}",
       user: user_name, password: user_password, cwd: home)
     cmd.run_command
     cmd.error!
@@ -34,11 +36,12 @@ end
 
 execute 'bootstrap_bashrc' do
   command <<-EOH
-    echo '[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"' >> .bashrc
+echo '[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"' >> .bashrc
   EOH
   user 'vagrant'
   cwd home
   notifies :create, 'file[lock_rvm]', :immediately
+  action :nothing
 end
 
 file 'lock_rvm' do

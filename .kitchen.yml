@@ -14,7 +14,7 @@ platforms:
 suites:
   - name: default
     run_list:
-      - recipe[rvm::default]
+      - recipe[rvm::user_install]
       - recipe[rvm::rubies]
     attributes:
       rvm:
@@ -22,4 +22,4 @@ suites:
           name: vagrant
           password: vagrant
         rubies:
-          version: 2.2.2
+          version: 2.2.3

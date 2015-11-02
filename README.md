@@ -6,22 +6,17 @@
 rvm Cookbook
 ============
 
-Manages system-wide and per-user RVMs and manages installed Rubies.
+Manages per-user RVMs and manages installed Rubies.
 
 Requirements
 ------------
-TODO: List your cookbook requirements. Be sure to include any requirements this cookbook has on platforms, libraries, other cookbooks, packages, operating systems, etc.
 
-e.g.
-#### packages
-- `toaster` - rvm needs toaster to brown your bagel.
+None
 
 Attributes
 ----------
-TODO: List your cookbook attributes here.
 
-e.g.
-#### rvm::default
+#### rvm::user_install
 <table>
   <tr>
     <th>Key</th>
@@ -30,26 +25,48 @@ e.g.
     <th>Default</th>
   </tr>
   <tr>
-    <td><tt>['rvm']['bacon']</tt></td>
-    <td>Boolean</td>
-    <td>whether to include bacon</td>
-    <td><tt>true</tt></td>
+    <td><tt>['rvm']['keyserver']</tt></td>
+    <td>String</td>
+    <td>Key to import from key server</td>
+    <td><tt>hkp://keys.gnupg.net</tt></td>
+  </tr>
+  <tr>
+    <td><tt>['rvm']['rcev-keys']</tt></td>
+    <td>String</td>
+    <td>Import the keys with the given key IDs from a keyserver</td>
+    <td><tt>409B6B1796C275462A1703113804BB82D39DC0E3</tt></td>
+  </tr>
+  <tr>
+    <td><tt>['rvm']['user']['name']</tt></td>
+    <td>String</td>
+    <td>The user name for rvm user install</td>
+    <td><tt>admin</tt></td>
+  </tr>
+  <tr>
+    <td><tt>['rvm']['user']['password']</tt></td>
+    <td>String</td>
+    <td>The user password for rvm user install</td>
+    <td><tt>admin</tt></td>
+  </tr>
+  <tr>
+    <td><tt>['rvm']['user']['dir']</tt></td>
+    <td>String</td>
+    <td>The user folder for rvm user install</td>
+    <td><tt>/home/admin</tt></td>
   </tr>
 </table>
 
 Usage
 -----
-#### rvm::default
-TODO: Write usage instructions for each cookbook.
+#### rvm::user_install
 
-e.g.
-Just include `rvm` in your node's `run_list`:
+Just include `rvm::user_install` in your node's `run_list`:
 
 ```json
 {
   "name":"my_node",
   "run_list": [
-    "recipe[rvm]"
+    "recipe[rvm::user_install]"
   ]
 }
 ```
@@ -68,4 +85,4 @@ e.g.
 
 License and Authors
 -------------------
-Authors: TODO: List authors
+Authors: David Saenz Tagarro

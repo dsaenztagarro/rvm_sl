@@ -35,10 +35,9 @@ ruby_block 'install_rvm' do
 end
 
 execute 'bootstrap_bashrc' do
-  command <<-EOH
-echo '[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"' >> .bashrc
-  EOH
-  user 'vagrant'
+  command "echo '[[ -s \"$HOME/.rvm/scripts/rvm\" ]] && " \
+          "source \"$HOME/.rvm/scripts/rvm\"' >> .bashrc"
+  user user_name
   cwd home
   notifies :create, 'file[lock_rvm]', :immediately
   action :nothing

@@ -11,7 +11,11 @@ Manages per-user RVMs and manages installed Rubies.
 Requirements
 ------------
 
-None
+#### Platforms
+- Ubuntu 14.04 LTS
+
+#### Chef
+- Chef 12.2.0
 
 Attributes
 ----------

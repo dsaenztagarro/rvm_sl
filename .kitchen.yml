@@ -1,6 +1,8 @@
 ---
 driver:
   name: vagrant
+  network:
+    - ['private_network', { ip: '192.168.0.11' }]
 
 provisioner:
   name: chef_zero

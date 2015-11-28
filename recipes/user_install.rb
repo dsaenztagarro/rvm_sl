@@ -1,5 +1,5 @@
 #
-# Cookbook Name:: rvm
+# Cookbook Name:: rvm_sl
 # Recipe:: default
 #
 # Copyright 2015, David Saenz Tagarro
@@ -7,16 +7,16 @@
 # All rights reserved - Do Not Redistribute
 #
 
-user_name = node['rvm']['user']['name']
-user_password = node['rvm']['user']['password']
+user_name = node['rvm_sl']['user']['name']
+user_password = node['rvm_sl']['user']['password']
 home = "/home/#{user_name}"
 
 package %w(gnupg curl)
 
-keyserver = node['rvm']['keyserver']
-recv_keys = node['rvm']['recv-keys']
+keyserver = node['rvm_sl']['keyserver']
+recv_keys = node['rvm_sl']['recv-keys']
 
-ruby_block 'install_rvm' do
+ruby_block 'install_rvm_sl' do
   block do
     cmd = Mixlib::ShellOut.new(
       "gpg --keyserver #{keyserver} --recv-keys #{recv_keys}",
@@ -25,7 +25,7 @@ ruby_block 'install_rvm' do
     cmd.error!
 
     cmd = Mixlib::ShellOut.new(
-      '\curl -sSL https://get.rvm.io | bash -s stable',
+      '\curl -sSL https://get.rvm_sl.io | bash -s stable',
       user: user_name, password: user_password, cwd: home)
     cmd.run_command
     cmd.error!
@@ -35,17 +35,17 @@ ruby_block 'install_rvm' do
 end
 
 execute 'bootstrap_bashrc' do
-  command "echo '[[ -s \"$HOME/.rvm/scripts/rvm\" ]] && " \
-          "source \"$HOME/.rvm/scripts/rvm\"' >> .bashrc"
+  command "echo '[[ -s \"$HOME/.rvm_sl/scripts/rvm_sl\" ]] && " \
+          "source \"$HOME/.rvm_sl/scripts/rvm_sl\"' >> .bashrc"
   user user_name
   cwd home
-  notifies :create, 'file[lock_rvm]', :immediately
+  notifies :create, 'file[lock_rvm_sl]', :immediately
   action :nothing
 end
 
-file 'lock_rvm' do
-  path "#{home}/.lockrvm"
-  name 'lock_rvm'
+file 'lock_rvm_sl' do
+  path "#{home}/.lockrvm_sl"
+  name 'lock_rvm_sl'
   user 'vagrant'
   action :nothing
 end

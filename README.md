@@ -3,7 +3,7 @@
 [![Coverage Status](https://coveralls.io/repos/dsaenztagarro/rvm-chef/badge.svg?branch=master&service=github)](https://coveralls.io/github/dsaenztagarro/rvm-chef?branch=master)
 [![Dependency Status](https://gemnasium.com/dsaenztagarro/rvm-chef.svg)](https://gemnasium.com/dsaenztagarro/rvm-chef)
 
-rvm Cookbook
+rvm_sl Cookbook
 ============
 
 Manages per-user RVMs and manages installed Rubies.
@@ -20,7 +20,7 @@ Requirements
 Attributes
 ----------
 
-#### rvm::user_install
+#### rvm_sl::user_install
 <table>
   <tr>
     <th>Key</th>
@@ -29,48 +29,48 @@ Attributes
     <th>Default</th>
   </tr>
   <tr>
-    <td><tt>['rvm']['keyserver']</tt></td>
+    <td><tt>['rvm_sl']['keyserver']</tt></td>
     <td>String</td>
     <td>Key to import from key server</td>
     <td><tt>hkp://keys.gnupg.net</tt></td>
   </tr>
   <tr>
-    <td><tt>['rvm']['rcev-keys']</tt></td>
+    <td><tt>['rvm_sl']['rcev-keys']</tt></td>
     <td>String</td>
     <td>Import the keys with the given key IDs from a keyserver</td>
     <td><tt>409B6B1796C275462A1703113804BB82D39DC0E3</tt></td>
   </tr>
   <tr>
-    <td><tt>['rvm']['user']['name']</tt></td>
+    <td><tt>['rvm_sl']['user']['name']</tt></td>
     <td>String</td>
-    <td>The user name for rvm user install</td>
+    <td>The user name for rvm_sl user install</td>
     <td><tt>admin</tt></td>
   </tr>
   <tr>
-    <td><tt>['rvm']['user']['password']</tt></td>
+    <td><tt>['rvm_sl']['user']['password']</tt></td>
     <td>String</td>
-    <td>The user password for rvm user install</td>
+    <td>The user password for rvm_sl user install</td>
     <td><tt>admin</tt></td>
   </tr>
   <tr>
-    <td><tt>['rvm']['user']['dir']</tt></td>
+    <td><tt>['rvm_sl']['user']['dir']</tt></td>
     <td>String</td>
-    <td>The user folder for rvm user install</td>
+    <td>The user folder for rvm_sl user install</td>
     <td><tt>/home/admin</tt></td>
   </tr>
 </table>
 
 Usage
 -----
-#### rvm::user_install
+#### rvm_sl::user_install
 
-Just include `rvm::user_install` in your node's `run_list`:
+Just include `rvm_sl::user_install` in your node's `run_list`:
 
 ```json
 {
   "name":"my_node",
   "run_list": [
-    "recipe[rvm::user_install]"
+    "recipe[rvm_sl::user_install]"
   ]
 }
 ```

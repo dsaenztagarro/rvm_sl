@@ -1,7 +1,7 @@
 DEPENDENCIES
-  rvm
+  rvm_sl
     path: .
     metadata: true
 
 GRAPH
-  rvm (0.1.0)
+  rvm_sl (0.1.0)

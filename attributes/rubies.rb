@@ -1,5 +1,5 @@
-default['rvm']['user']['name'] = 'admin'
-default['rvm']['user']['password'] = 'admin'
-default['rvm']['user']['dir'] = '/home/admin'
+default['rvm_sl']['user']['name'] = 'admin'
+default['rvm_sl']['user']['password'] = 'admin'
+default['rvm_sl']['user']['dir'] = '/home/admin'
 
-default['rvm']['rubies']['version'] = '2.2.3'
+default['rvm_sl']['rubies']['version'] = '2.2.3'

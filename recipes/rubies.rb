@@ -12,7 +12,7 @@ home = "/home/#{user_name}"
 
 ruby_version = node['rvm_sl']['rubies']['version']
 
-group 'rvm_sl' do
+group 'rvm' do
   members [user_name, 'root']
   append true
 end

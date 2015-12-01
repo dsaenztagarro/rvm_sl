@@ -10,6 +10,10 @@ describe 'rvm_sl::user_install' do
     end.converge described_recipe
   end
 
+  it 'installs packages gnupg and curl' do
+    expect(chef_run).to install_package('gnupg, curl')
+  end
+
   it 'sends a notification to bootstrap bashrc' do
     ruby_block = chef_run.ruby_block('install_rvm_sl')
     expect(ruby_block).to notify('execute[bootstrap_bashrc]').to(:run).immediately

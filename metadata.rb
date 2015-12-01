@@ -5,3 +5,11 @@ license          'All rights reserved'
 description      'Installs/Configures rvm_sl'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
 version          '0.1.0'
+
+recipe 'rvm_sl::user_install', 'User installation of rvm'
+recipe 'rvm_sl::rubies', 'Installs rubies'
+
+%w(debian ubuntu).each { |os| supports os }
+
+source_url 'https://github.com/dsaenztagarro/rvm_sl' if respond_to?(:source_url)
+issues_url 'https://github.com/dsaenztagarro/rvm_sl/issues' if respond_to?(:issues_url)

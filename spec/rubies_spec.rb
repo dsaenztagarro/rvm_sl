@@ -11,7 +11,7 @@ describe 'rvm_sl::rubies' do
   end
 
   it 'appends user and root to rvm group' do
-    expect(chef_run).to create_group('rvm').with(members: ['vagrant', 'root'])
+    expect(chef_run).to create_group('rvm').with(members: %w(vagrant root))
   end
 
   it 'runs a execute to install ruby' do

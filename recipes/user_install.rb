@@ -14,7 +14,7 @@ home = "/home/#{user_name}"
 package %w(gnupg curl)
 
 keyserver = node['rvm']['keyserver']
-recv_keys = unode['rvm']['recv-keys']
+recv_keys = node['rvm']['recv-keys']
 
 ruby_block 'install_rvm' do
   block do

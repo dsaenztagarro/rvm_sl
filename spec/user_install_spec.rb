@@ -10,9 +10,9 @@ describe 'rvm_sl::user_install' do
     end.converge described_recipe
   end
 
-	before(:each) do
-		stub_command("grep -q rvm /home/vagrant/.bashrc").and_return(false)
-	end
+  before(:each) do
+    stub_command('grep -q rvm /home/vagrant/.bashrc').and_return(false)
+  end
 
   it 'installs packages gnupg and curl' do
     expect(chef_run).to install_package('gnupg, curl')
@@ -27,7 +27,7 @@ describe 'rvm_sl::user_install' do
     expect { :chef_run }.to_not raise_error
   end
 
-  it "runs a execute when bootstraping the bashrc" do
+  it 'runs a execute when bootstraping the bashrc' do
     expect(chef_run).to run_execute('bootstraping_bashrc')
   end
 end

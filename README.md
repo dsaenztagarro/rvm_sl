@@ -4,8 +4,8 @@
 [![Coverage Status](https://coveralls.io/repos/dsaenztagarro/rvm_sl/badge.svg?branch=master&service=github)](https://coveralls.io/github/dsaenztagarro/rvm_sl?branch=master)
 [![Dependency Status](https://gemnasium.com/dsaenztagarro/rvm_sl.svg)](https://gemnasium.com/dsaenztagarro/rvm_sl)
 
-rvm Cookbook
-============
+rvm_sl Cookbook
+===============
 
 Manages per-user RVMs and manages installed Rubies.
 
@@ -76,11 +76,16 @@ Just include `rvm::user_install` in your node's `run_list`:
 }
 ```
 
+Sharing
+-------
+
+```
+knife cookbook site share "rvm_sl" "Applications"
+```
+
 Contributing
 ------------
-TODO: (optional) If this is a public cookbook, detail the process for contributing. If this is a private cookbook, remove this section.
 
-e.g.
 1. Fork the repository on Github
 2. Create a named feature branch (like `add_component_x`)
 3. Write your change

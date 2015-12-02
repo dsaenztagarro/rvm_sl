@@ -14,7 +14,7 @@ home = "/home/#{user_name}"
 package %w(gnupg curl)
 
 keyserver = node['rvm']['keyserver']
-recv_keys = node['rvm']['recv-keys']
+recv_keys = unode['rvm']['recv-keys']
 
 ruby_block 'install_rvm' do
   block do
@@ -39,7 +39,7 @@ execute 'bootstraping_bashrc' do
   user user_name
   cwd home
   notifies :create, 'file[lock_rvm]', :immediately
-	not_if "grep -q rvm #{home}/.bashrc"
+  not_if "grep -q rvm #{home}/.bashrc"
 end
 
 file 'lock_rvm' do

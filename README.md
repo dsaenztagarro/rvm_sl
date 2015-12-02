@@ -18,6 +18,9 @@ Requirements
 #### Chef
 - Chef 12.2.0
 
+#### packages
+- `rvm::user_install` - User installation of rvm
+
 Attributes
 ----------
 

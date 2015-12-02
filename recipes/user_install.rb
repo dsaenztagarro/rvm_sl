@@ -15,7 +15,7 @@ recv_keys = node['rvm']['recv-keys']
 
 include_recipe 'rvm_sl::system_requirements'
 
-ruby_block 'install_rvm' do
+ruby_block 'installing_rvm' do
   block do
     cmd = Mixlib::ShellOut.new(
       "gpg --keyserver #{keyserver} --recv-keys #{recv_keys}",
@@ -29,7 +29,7 @@ ruby_block 'install_rvm' do
     cmd.run_command
     cmd.error!
   end
-  action :create
+  action :run
 end
 
 execute 'bootstraping_bashrc' do

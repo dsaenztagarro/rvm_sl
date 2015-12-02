@@ -18,13 +18,17 @@ describe 'rvm_sl::user_install' do
     expect(chef_run).to include_recipe('rvm_sl::system_requirements')
   end
 
-  it 'sends a notification to create lock file' do
-    bootstrap_command = chef_run.execute('bootstraping_bashrc')
-    expect(bootstrap_command).to notify('file[lock_rvm]').to(:create).immediately
+  it 'runs a ruby_block with installing rvm' do
+    expect(chef_run).to run_ruby_block('installing_rvm')
   end
 
   it 'runs a execute when bootstraping the bashrc' do
     expect(chef_run).to run_execute('bootstraping_bashrc')
+  end
+
+  it 'sends a notification to create lock file' do
+    bootstrap_command = chef_run.execute('bootstraping_bashrc')
+    expect(bootstrap_command).to notify('file[lock_rvm]').to(:create).immediately
   end
 
   it 'converges successfully' do

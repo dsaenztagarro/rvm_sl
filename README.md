@@ -80,7 +80,7 @@ Sharing
 -------
 
 ```
-knife cookbook site share "rvm_sl" "Applications"
+knife cookbook site share "rvm_sl" "Package Management"
 ```
 
 Contributing

@@ -23,11 +23,11 @@ describe 'rvm_sl::user_install' do
     expect(bootstrap_command).to notify('file[lock_rvm]').to(:create).immediately
   end
 
-  it 'converges successfully' do
-    expect { :chef_run }.to_not raise_error
-  end
-
   it 'runs a execute when bootstraping the bashrc' do
     expect(chef_run).to run_execute('bootstraping_bashrc')
+  end
+
+  it 'converges successfully' do
+    expect { :chef_run }.to_not raise_error
   end
 end

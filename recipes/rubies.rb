@@ -23,7 +23,7 @@ group 'admin' do
 end
 
 execute 'install_ruby' do
-  environment 'HOME' => '/home/vagrant'
+  environment 'HOME' => home
   command <<-END
     bash -l -c 'rvm install #{ruby_version}'
     bash -l -c 'rvm --default use #{ruby_version}'

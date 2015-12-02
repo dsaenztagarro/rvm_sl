@@ -16,10 +16,10 @@ platforms:
 suites:
   - name: default
     run_list:
-      - recipe[rvm_sl::user_install]
-      - recipe[rvm_sl::rubies]
+      - recipe[rvm::user_install]
+      - recipe[rvm::rubies]
     attributes:
-      rvm_sl:
+      rvm:
         user:
           name: vagrant
           password: vagrant

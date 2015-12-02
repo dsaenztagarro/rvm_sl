@@ -1,4 +1,4 @@
-Testing the rvm_sl cookbook
+Testing the rvm cookbook
 =====
 
 This cookbook includes both unit tests via
@@ -24,8 +24,8 @@ Development Kit](http://downloads.getchef.com/chef-dk/) - Version 0.3.4
 Clone the latest version of the cookbook from the repository.
 
 ```bash
-git clone git@github.com:dsaenztagarro/rvm_sl.git
-cd rvm_sl
+git clone git@github.com:dsaenztagarro/rvm.git
+cd rvm
 ```
 
 Running ChefSpec
@@ -49,4 +49,4 @@ To run ChefSpec for a specific recipe:
 Running Test Kitchen
 -----
 
-Test Kitchen test suites are defined in [.kitchen.yml](https://github.com/dsaenztagarro/rvm_sl_chef/blob/master/.kitchen.yml). Runnine `kitchen test` will cause Test Kitchen to spin up each test.
+Test Kitchen test suites are defined in [.kitchen.yml](https://github.com/dsaenztagarro/rvm_chef/blob/master/.kitchen.yml). Runnine `kitchen test` will cause Test Kitchen to spin up each test.

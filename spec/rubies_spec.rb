@@ -5,8 +5,8 @@ describe 'rvm_sl::rubies' do
 
   let(:chef_run) do
     ChefSpec::ServerRunner.new(platform: 'ubuntu', version: '14.04') do |node|
-      node.set['rvm_sl']['user']['name'] = 'vagrant'
-      node.set['rvm_sl']['user']['password'] = 'vagrant'
+      node.set['rvm']['user']['name'] = 'vagrant'
+      node.set['rvm']['user']['password'] = 'vagrant'
     end.converge described_recipe
   end
 
@@ -18,8 +18,8 @@ describe 'rvm_sl::rubies' do
     expect(chef_run).to run_execute('install_ruby')
   end
 
-  it 'runs a execute to modify permissions on rvm_sl install dir' do
-    expect(chef_run).to run_execute('chown_rvm_sl_dir')
+  it 'runs a execute to modify permissions on rvm install dir' do
+    expect(chef_run).to run_execute('chown_rvm_dir')
   end
 
   it 'converges successfully' do

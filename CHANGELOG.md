@@ -1,11 +1,11 @@
-rvm_sl CHANGELOG
+rvm CHANGELOG
 =============
 
-This file is used to list changes made in each version of the rvm_sl cookbook.
+This file is used to list changes made in each version of the rvm cookbook.
 
 0.1.0
 -----
-- [your_name] - Initial release of rvm_sl
+- [your_name] - Initial release of rvm
 
 - - -
 Check the [Markdown Syntax Guide](http://daringfireball.net/projects/markdown/syntax) for help with Markdown.

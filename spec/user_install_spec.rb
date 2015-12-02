@@ -14,8 +14,8 @@ describe 'rvm_sl::user_install' do
     stub_command('grep -q rvm /home/vagrant/.bashrc').and_return(false)
   end
 
-  it 'installs packages gnupg and curl' do
-    expect(chef_run).to install_package('gnupg, curl')
+  it 'includes the `system_requirements` recipe' do
+    expect(chef_run).to include_recipe('rvm_sl::system_requirements')
   end
 
   it 'sends a notification to create lock file' do

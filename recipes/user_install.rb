@@ -10,11 +10,10 @@
 user_name = node['rvm']['user']['name']
 user_password = node['rvm']['user']['password']
 home = "/home/#{user_name}"
-
-package %w(gnupg curl)
-
 keyserver = node['rvm']['keyserver']
 recv_keys = node['rvm']['recv-keys']
+
+include_recipe 'rvm_sl::system_requirements'
 
 ruby_block 'install_rvm' do
   block do

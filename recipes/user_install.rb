@@ -37,18 +37,10 @@ execute 'bootstraping_bashrc' do
           "source \"$HOME/.rvm/scripts/rvm\"' >> .bashrc"
   user user_name
   cwd home
-  notifies :create, 'file[lock_rvm]', :immediately
   not_if "grep -q rvm #{home}/.bashrc"
 end
 
 group 'rvm' do
   members [user_name, 'root']
   append true
-end
-
-file 'lock_rvm' do
-  path "#{home}/.lockrvm"
-  name 'lock_rvm'
-  user 'vagrant'
-  action :nothing
 end

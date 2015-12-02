@@ -4,7 +4,7 @@ describe 'rvm_sl::user_install' do
   let(:home) { '/home/vagrant' }
 
   let(:chef_run) do
-    ChefSpec::ServerRunner.new(platform: 'ubuntu', version: '14.04') do |node|
+    ChefSpec::SoloRunner.new(platform: 'ubuntu', version: '14.04') do |node|
       node.set['rvm']['user']['name'] = 'vagrant'
       node.set['rvm']['user']['password'] = 'vagrant'
     end.converge described_recipe
@@ -28,11 +28,6 @@ describe 'rvm_sl::user_install' do
 
   it 'appends user and root to rvm group' do
     expect(chef_run).to create_group('rvm').with(members: %w(vagrant root))
-  end
-
-  it 'sends a notification to create lock file' do
-    bootstrap_command = chef_run.execute('bootstraping_bashrc')
-    expect(bootstrap_command).to notify('file[lock_rvm]').to(:create).immediately
   end
 
   it 'converges successfully' do

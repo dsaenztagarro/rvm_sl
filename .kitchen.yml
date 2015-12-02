@@ -16,12 +16,12 @@ platforms:
 suites:
   - name: default
     run_list:
-      - recipe[rvm::user_install]
-      - recipe[rvm::rubies]
+      - recipe[rvm::rubies_test]
     attributes:
       rvm:
         user:
           name: vagrant
           password: vagrant
+          home: vagrant
         rubies:
           version: 2.2.3

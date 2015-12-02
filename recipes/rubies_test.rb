@@ -1,15 +1,11 @@
 #
 # Cookbook Name:: rvm_sl
-# Recipe:: rubies
+# Recipe:: rubies_test
 #
 # Copyright 2015, David Saenz Tagarro
 #
 # All rights reserved - Do Not Redistribute
 #
-
-node.default['rvm']['user']['name'] = 'vagrant'
-node.default['rvm']['user']['password'] = 'vagrant'
-node.default['rvm']['user']['home'] = '/home/vagrant'
 
 include_recipe 'rvm_sl::user_install'
 

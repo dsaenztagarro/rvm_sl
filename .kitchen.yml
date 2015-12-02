@@ -10,13 +10,14 @@ provisioner:
 platforms:
   - name: ubuntu-14.04
     driver:
+      box: ubuntu-14.04
       customize:
         memory: 2048
 
 suites:
   - name: default
     run_list:
-      - recipe[rvm::rubies_test]
+      - recipe[rvm_sl::rubies_test]
     attributes:
       rvm:
         user:

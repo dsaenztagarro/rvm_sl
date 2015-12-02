@@ -10,15 +10,15 @@ property :user_name, String, default: nil
 action :create do
   execute 'installing_ruby' do
     environment 'HOME' => home
-    command "bash -l -c 'rvm install #{version}"
-    user 'rvm'
+    command "bash -l -c 'rvm install #{version}'"
+    user user_name
     group 'rvm'
   end
 
   execute 'setting_default' do
     environment 'HOME' => home
     command "bash -l -c 'rvm --default use #{version}'"
-    user 'rvm'
+    user user_name
     group 'rvm'
     only_if { default }
   end

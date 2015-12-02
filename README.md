@@ -22,44 +22,14 @@ Attributes
 ----------
 
 #### rvm::user_install
-<table>
-  <tr>
-    <th>Key</th>
-    <th>Type</th>
-    <th>Description</th>
-    <th>Default</th>
-  </tr>
-  <tr>
-    <td><tt>['rvm']['keyserver']</tt></td>
-    <td>String</td>
-    <td>Key to import from key server</td>
-    <td><tt>hkp://keys.gnupg.net</tt></td>
-  </tr>
-  <tr>
-    <td><tt>['rvm']['rcev-keys']</tt></td>
-    <td>String</td>
-    <td>Import the keys with the given key IDs from a keyserver</td>
-    <td><tt>409B6B1796C275462A1703113804BB82D39DC0E3</tt></td>
-  </tr>
-  <tr>
-    <td><tt>['rvm']['user']['name']</tt></td>
-    <td>String</td>
-    <td>The user name for rvm user install</td>
-    <td><tt>admin</tt></td>
-  </tr>
-  <tr>
-    <td><tt>['rvm']['user']['password']</tt></td>
-    <td>String</td>
-    <td>The user password for rvm user install</td>
-    <td><tt>admin</tt></td>
-  </tr>
-  <tr>
-    <td><tt>['rvm']['user']['dir']</tt></td>
-    <td>String</td>
-    <td>The user folder for rvm user install</td>
-    <td><tt>/home/admin</tt></td>
-  </tr>
-</table>
+
+See `attributes/user_insetall.rb` for default values.
+
+* `node['rvm']['keyserver']` - Key to import from key server
+* `node['rvm']['rcev-keys']` - Import the keys with the given key IDs from a keyserver
+* `node['rvm']['user']['name']` - The user name for rvm user install
+* `node['rvm']['user']['password']` - The user password for rvm user install
+* `node['rvm']['user']['dir'] - The user folder for rvm user install
 
 Usage
 -----

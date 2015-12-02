@@ -41,6 +41,11 @@ execute 'bootstraping_bashrc' do
   not_if "grep -q rvm #{home}/.bashrc"
 end
 
+group 'rvm' do
+  members [user_name, 'root']
+  append true
+end
+
 file 'lock_rvm' do
   path "#{home}/.lockrvm"
   name 'lock_rvm'

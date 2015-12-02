@@ -26,6 +26,10 @@ describe 'rvm_sl::user_install' do
     expect(chef_run).to run_execute('bootstraping_bashrc')
   end
 
+  it 'appends user and root to rvm group' do
+    expect(chef_run).to create_group('rvm').with(members: %w(vagrant root))
+  end
+
   it 'sends a notification to create lock file' do
     bootstrap_command = chef_run.execute('bootstraping_bashrc')
     expect(bootstrap_command).to notify('file[lock_rvm]').to(:create).immediately

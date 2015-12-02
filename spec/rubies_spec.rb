@@ -1,8 +1,6 @@
 require 'spec_helper'
 
-describe 'rvm_sl::rubies' do
-  let(:home) { '/home/vagrant' }
-
+describe 'rvm_sl::rubies_test' do
   let(:chef_run) do
     ChefSpec::ServerRunner.new(platform: 'ubuntu', version: '14.04') do |node|
       node.set['rvm']['user']['name'] = 'vagrant'
@@ -10,19 +8,15 @@ describe 'rvm_sl::rubies' do
     end.converge described_recipe
   end
 
-  it 'appends user and root to rvm group' do
-    expect(chef_run).to create_group('rvm').with(members: %w(vagrant root))
+  before(:each) do
+    stub_command('grep -q rvm /home/vagrant/.bashrc').and_return(false)
+  end
+
+  it 'includes the `user_install` recipe' do
+    expect(chef_run).to include_recipe('rvm_sl::user_install')
   end
 
   it 'runs a execute to install ruby' do
-    expect(chef_run).to run_execute('install_ruby')
-  end
-
-  it 'runs a execute to modify permissions on rvm install dir' do
-    expect(chef_run).to run_execute('chown_rvm_dir')
-  end
-
-  it 'converges successfully' do
-    expect { :chef_run }.to_not raise_error
+    expect(chef_run).to create_rvm_rubies('ruby-2.2.3')
   end
 end

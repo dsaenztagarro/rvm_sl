@@ -32,7 +32,7 @@ See `attributes/user_install.rb` for default values.
 * `node['rvm']['rcev-keys']` - Import the keys with the given key IDs from a keyserver
 * `node['rvm']['user']['name']` - The user name for rvm user install
 * `node['rvm']['user']['password']` - The user password for rvm user install
-* `node['rvm']['user']['dir']` - The user folder for rvm user install
+* `node['rvm']['user']['home']` - The home path for rvm user install
 
 Resources
 ---------
@@ -44,7 +44,6 @@ rvm_rubies 'ruby-2.2.3' do
   default true
   home '/home/vagrant'
   user_name 'vagrant'
-  version '2.2.3'
 end
 ```
 

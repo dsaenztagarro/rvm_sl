@@ -48,6 +48,16 @@ rvm_rubies 'ruby-2.2.3' do
 end
 ```
 
+Example install bundler gem for user install ruby 2.2.3:
+
+```ruby
+rvm_gem 'bundler' do
+  home '/home/vagrant'
+  ruby_version 'ruby-2.2.3'
+  user_name 'vagrant'
+end
+```
+
 Usage
 -----
 #### rvm::user_install

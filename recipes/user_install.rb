@@ -30,6 +30,7 @@ ruby_block 'installing_rvm' do
     cmd.error!
   end
   action :run
+  not_if 'rvm --version &> /dev/null'
 end
 
 execute 'bootstraping_bashrc' do

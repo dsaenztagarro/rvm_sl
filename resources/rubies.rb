@@ -4,8 +4,8 @@ default_action :create
 
 property :instance_name, String, name_property: true
 property :default, kind_of: [TrueClass, FalseClass], default: false
-property :home, String, required: true
-property :user_name, String, required: true
+property :home, String, default: node['rvm']['user']['home']
+property :user_name, String, default: node['rvm']['user']['name']
 
 action :create do
   ruby_version = instance_name

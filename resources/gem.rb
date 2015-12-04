@@ -4,8 +4,8 @@ default_action :create
 
 property :instance_name, String, name_property: true
 property :ruby_version, required: true
-property :home, String, required: true
-property :user_name, String, required: true
+property :home, String, default: node['rvm']['user']['home']
+property :user_name, String, default: node['rvm']['user']['name']
 
 action :create do
   gem_version = instance_name

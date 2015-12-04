@@ -6,7 +6,11 @@ describe 'rvm_sl::system_requirements' do
     end.converge described_recipe
   end
 
-  it 'installs packages gnupg and curl' do
-    expect(chef_run).to install_package('gnupg, curl')
+  it 'installs all packages when specifying rvm installer dependencies' do
+    expect(chef_run).to install_package(['gnupg', 'curl'])
+  end
+
+  it 'installs all packages when specifying ruby dependencies' do
+    expect(chef_run).to install_package('installing_ruby_dependencies')
   end
 end

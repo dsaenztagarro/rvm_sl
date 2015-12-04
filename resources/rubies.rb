@@ -10,7 +10,7 @@ property :user_name, String, default: nil
 action :create do
   execute 'installing_ruby' do
     environment 'HOME' => home
-    command "bash -l -c 'rvm install #{version}'"
+    command "bash -l -c 'rvm autolibs read-fail; rvm install #{version}'"
     user user_name
     group 'rvm'
   end

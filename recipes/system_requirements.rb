@@ -7,4 +7,24 @@
 # All rights reserved - Do Not Redistribute
 #
 
-package %w(gnupg curl)
+package 'installing_rvm_installer_dependencies' do
+  package_name %w(gnupg curl)
+end
+
+package 'installing_ruby_dependencies' do
+  package_name %w(autoconf
+                  automake
+                  bison
+                  g++
+                  gawk
+                  gcc
+                  libffi-dev
+                  libgdbm-dev
+                  libncurses5-dev
+                  libsqlite3-dev
+                  libtool
+                  libyaml-dev
+                  patch
+                  pkg-config
+                  sqlite3)
+end

@@ -2,22 +2,24 @@ resource_name :rvm_rubies
 
 default_action :create
 
-property :version, String, required: true
+property :instance_name, String, name_property: true
 property :default, kind_of: [TrueClass, FalseClass], default: false
 property :home, String, required: true
-property :user_name, String, default: nil
+property :user_name, String, required: true
 
 action :create do
+  ruby_version = instance_name
+
   execute 'installing_ruby' do
     environment 'HOME' => home
-    command "bash -l -c 'rvm install #{version}'"
+    command "bash -l -c 'rvm install #{ruby_version}'"
     user user_name
     group 'rvm'
   end
 
   execute 'setting_default' do
     environment 'HOME' => home
-    command "bash -l -c 'rvm --default use #{version}'"
+    command "bash -l -c 'rvm --default use #{ruby_version}'"
     user user_name
     group 'rvm'
     only_if { default }
@@ -27,6 +29,5 @@ action :create do
     environment 'HOME' => home
     command "chown -R #{user_name}:rvm #{ENV['HOME']}/.rvm"
     action :run
-    not_if { user_name.nil? }
   end
 end

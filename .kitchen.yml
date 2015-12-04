@@ -11,7 +11,7 @@ provisioner:
 platforms:
   - name: ubuntu-14.04
     driver:
-      box: ubuntu-14.04
+      box: opscode-ubuntu-14.04
       customize:
         memory: 2048
 

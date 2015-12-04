@@ -17,8 +17,12 @@ describe 'rvm_sl::rubies_test' do
     expect(chef_run).to include_recipe('rvm_sl::user_install')
   end
 
-  it 'runs a execute to install ruby' do
+  it 'installs rubies through rvm' do
     expect(chef_run).to create_rvm_rubies('ruby-2.2.3')
+  end
+
+  it 'installs gem through rvm' do
+    expect(chef_run).to create_rvm_gem('bundler')
   end
 
   context 'create rvm rubies' do
@@ -40,6 +44,20 @@ describe 'rvm_sl::rubies_test' do
 
     it 'runs a execute with modifying permissions' do
       expect(chef_run).to run_execute('modifying_permissions')
+    end
+  end
+
+  context 'create rvm gem' do
+    let(:chef_run) do
+      ChefSpec::SoloRunner.new(platform: 'ubuntu', version: '14.04', step_into: 'rvm_gem') do |node|
+        node.set['rvm']['user']['name'] = 'vagrant'
+        node.set['rvm']['user']['password'] = 'vagrant'
+        node.set['rvm']['user']['home'] = '/home/vagrant'
+      end.converge described_recipe
+    end
+
+    it 'runs a execute with installing gem' do
+      expect(chef_run).to run_execute('installing_gem')
     end
   end
 end

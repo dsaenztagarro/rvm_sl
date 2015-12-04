@@ -7,6 +7,10 @@ This file is used to list changes made in each version of the rvm cookbook.
 -----
 - [David Saenz Tagarro] - Initial release of rvm_sl
 
+0.1.1
+-----
+- [David Saenz Tagarro] - Added `rvm_gem` resource
+
 - - -
 Check the [Markdown Syntax Guide](http://daringfireball.net/projects/markdown/syntax) for help with Markdown.
 

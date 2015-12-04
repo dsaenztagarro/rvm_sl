@@ -13,5 +13,10 @@ rvm_rubies 'ruby-2.2.3' do
   default true
   home '/home/vagrant'
   user_name 'vagrant'
-  version '2.2.3'
+end
+
+rvm_gem 'bundler' do
+  home '/home/vagrant'
+  ruby_version 'ruby-2.2.3'
+  user_name 'vagrant'
 end

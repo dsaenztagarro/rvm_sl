@@ -12,6 +12,10 @@ This file is used to list changes made in each version of the rvm cookbook.
 - [David Saenz Tagarro] - Added `rvm_gem` resource
 - [David Saenz Tagarro] - Added ruby dependencies to `system_requirements` recipe
 
+0.1.2
+-----
+- [David Saenz Tagarro] - Fixed rubocop issues
+
 - - -
 Check the [Markdown Syntax Guide](http://daringfireball.net/projects/markdown/syntax) for help with Markdown.
 

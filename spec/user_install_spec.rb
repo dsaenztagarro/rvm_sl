@@ -11,7 +11,7 @@ describe 'rvm_sl::user_install' do
   end
 
   before(:each) do
-    stub_command("rvm --version &> /dev/null").and_return(false)
+    stub_command('rvm --version &> /dev/null').and_return(false)
     stub_command('grep -q rvm /home/vagrant/.bashrc').and_return(false)
   end
 

@@ -7,7 +7,7 @@ describe 'rvm_sl::system_requirements' do
   end
 
   it 'installs all packages when specifying rvm installer dependencies' do
-    expect(chef_run).to install_package(['gnupg', 'curl'])
+    expect(chef_run).to install_package('installing_rvm_installer_dependencies')
   end
 
   it 'installs all packages when specifying ruby dependencies' do

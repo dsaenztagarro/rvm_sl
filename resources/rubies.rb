@@ -9,6 +9,7 @@ property :user_name, String, default: node['rvm']['user']['name']
 
 action :create do
   ruby_version = instance_name
+  ruby_default = default
 
   execute 'installing_ruby' do
     environment 'HOME' => home
@@ -22,7 +23,7 @@ action :create do
     command "bash -l -c 'rvm --default use #{ruby_version}'"
     user user_name
     group 'rvm'
-    only_if { default }
+    only_if { ruby_default }
   end
 
   execute 'modifying_permissions' do

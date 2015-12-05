@@ -16,6 +16,13 @@ This file is used to list changes made in each version of the rvm cookbook.
 -----
 - [David Saenz Tagarro] - Fixed rubocop issues
 
+0.1.3
+-----
+- [David Saenz Tagarro] - Fixed documentation
+- [David Saenz Tagarro] - Updated defaults of user attributes
+- [David Saenz Tagarro] - Added defaults to user attributes of resources
+- [David Saenz Tagarro] - Updated installing rvm guard
+
 - - -
 Check the [Markdown Syntax Guide](http://daringfireball.net/projects/markdown/syntax) for help with Markdown.
 

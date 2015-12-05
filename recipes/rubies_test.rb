@@ -9,14 +9,10 @@
 
 include_recipe 'rvm_sl::user_install'
 
-rvm_rubies 'ruby-2.2.3' do
+rvm_rubies 'ruby-2.0.0' do
   default true
-  home '/home/vagrant'
-  user_name 'vagrant'
 end
 
 rvm_gem 'bundler' do
-  home '/home/vagrant'
-  ruby_version 'ruby-2.2.3'
-  user_name 'vagrant'
+  ruby_version 'ruby-2.0.0'
 end

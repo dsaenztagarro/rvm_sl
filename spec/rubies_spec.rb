@@ -10,7 +10,7 @@ describe 'rvm_sl::rubies_test' do
   end
 
   before(:each) do
-    stub_command('rvm --version &> /dev/null').and_return(false)
+    stub_command('which rvm').and_return(false)
     stub_command('grep -q rvm /home/vagrant/.bashrc').and_return(false)
   end
 
@@ -19,7 +19,7 @@ describe 'rvm_sl::rubies_test' do
   end
 
   it 'installs rubies through rvm' do
-    expect(chef_run).to create_rvm_rubies('ruby-2.2.3')
+    expect(chef_run).to create_rvm_rubies('ruby-2.0.0')
   end
 
   it 'installs gem through rvm' do

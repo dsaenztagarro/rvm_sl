@@ -24,6 +24,6 @@ suites:
         user:
           name: vagrant
           password: vagrant
-          home: vagrant
+          home: '/home/vagrant'
         rubies:
           version: 2.2.3

@@ -23,6 +23,11 @@ This file is used to list changes made in each version of the rvm cookbook.
 - [David Saenz Tagarro] - Added defaults to user attributes of resources
 - [David Saenz Tagarro] - Updated installing rvm guard
 
+0.1.4
+-----
+
+- [David Saenz Tagarro] - Fixed default user property of resources
+
 - - -
 Check the [Markdown Syntax Guide](http://daringfireball.net/projects/markdown/syntax) for help with Markdown.
 

@@ -1,12 +1,13 @@
 require 'spec_helper'
 
 describe 'rvm_sl::user_install' do
+  let(:username) { 'vagrant' }
   let(:home) { '/home/vagrant' }
 
   let(:chef_run) do
     ChefSpec::SoloRunner.new(platform: 'ubuntu', version: '14.04') do |node|
-      node.set['rvm']['user']['name'] = 'vagrant'
-      node.set['rvm']['user']['password'] = 'vagrant'
+      node.set['rvm']['user']['name'] = username
+      node.set['rvm']['user']['home'] = home
     end.converge described_recipe
   end
 

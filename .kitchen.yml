@@ -23,7 +23,4 @@ suites:
       rvm:
         user:
           name: vagrant
-          password: vagrant
           home: '/home/vagrant'
-        rubies:
-          version: 2.2.3

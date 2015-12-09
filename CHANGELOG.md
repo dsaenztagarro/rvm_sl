@@ -25,8 +25,13 @@ This file is used to list changes made in each version of the rvm cookbook.
 
 0.1.4
 -----
-
 - [David Saenz Tagarro] - Fixed default user property of resources
+
+0.1.5
+-----
+- [David Saenz Tagarro] - Refactoring from `Mixlib::ShellOut` to `login_shell`
+- [David Saenz Tagarro] - Removed not necessary attribute `['rvm']['user']['password']`.
+                          Refactoring attributes and chefspecs.
 
 - - -
 Check the [Markdown Syntax Guide](http://daringfireball.net/projects/markdown/syntax) for help with Markdown.

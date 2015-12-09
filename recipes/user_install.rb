@@ -44,5 +44,5 @@ execute 'bootstraping_bashrc' do
   environment 'USER' => username, 'HOME' => home
   user username
   group 'rvm'
-  not_if "grep -q rvm $HOME/.bashrc"
+  not_if 'grep -q rvm $HOME/.bashrc'
 end

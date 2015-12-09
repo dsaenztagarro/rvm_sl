@@ -28,3 +28,7 @@ package 'installing_ruby_dependencies' do
                   pkg-config
                   sqlite3)
 end
+
+package 'installing_json_gem_dependencies' do
+  package_name 'libgmp3-dev'
+end

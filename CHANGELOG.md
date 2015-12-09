@@ -38,6 +38,10 @@ This file is used to list changes made in each version of the rvm cookbook.
 - [David Saenz Tagarro] - Refactoring from `Mixlib::ShellOut` to execute resources
 - [David Saenz Tagarro] - Refactoring attributes and chefspecs.
 
+0.1.7
+-----
+- [David Saenz Tagarro] - Added json gem dependencies to system requirements
+
 - - -
 Check the [Markdown Syntax Guide](http://daringfireball.net/projects/markdown/syntax) for help with Markdown.
 

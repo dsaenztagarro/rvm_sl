@@ -12,4 +12,8 @@ describe 'rvm_sl::system_requirements' do
   it 'installs all packages when specifying ruby dependencies' do
     expect(chef_run).to install_package('installing_ruby_dependencies')
   end
+
+  it 'installs all packages when specifying json gem dependencies' do
+    expect(chef_run).to install_package('installing_json_gem_dependencies')
+  end
 end

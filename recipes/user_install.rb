@@ -8,8 +8,7 @@
 #
 
 user_name = node['rvm']['user']['name']
-user_password = node['rvm']['user']['password']
-home = "/home/#{user_name}"
+home = node['rvm']['user']['home']
 keyserver = node['rvm']['keyserver']
 recv_keys = node['rvm']['recv-keys']
 
@@ -17,17 +16,9 @@ include_recipe 'rvm_sl::system_requirements'
 
 ruby_block 'installing_rvm' do
   block do
-    cmd = Mixlib::ShellOut.new(
-      "gpg --keyserver #{keyserver} --recv-keys #{recv_keys}",
-      user: user_name, password: user_password, cwd: home)
-    cmd.run_command
-    cmd.error!
-
-    cmd = Mixlib::ShellOut.new(
-      '\curl -sSL https://get.rvm.io | bash -s stable',
-      user: user_name, password: user_password, cwd: home)
-    cmd.run_command
-    cmd.error!
+    opts = { user: user_name }
+    login_shell!("gpg --keyserver #{keyserver} --recv-keys #{recv_keys}", opts)
+    login_shell!('\curl -sSL https://get.rvm.io | bash -s stable', opts)
   end
   action :run
   not_if 'which rvm'

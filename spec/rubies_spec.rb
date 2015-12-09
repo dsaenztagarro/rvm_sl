@@ -10,7 +10,7 @@ describe 'rvm_sl::rubies_test' do
 
   before(:each) do
     stub_command('which rvm').and_return(false)
-    stub_command('grep -q rvm /home/vagrant/.bashrc').and_return(false)
+    stub_command('grep -q rvm $HOME/.bashrc').and_return(false)
   end
 
   it 'includes the `user_install` recipe' do

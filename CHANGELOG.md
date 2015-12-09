@@ -33,6 +33,11 @@ This file is used to list changes made in each version of the rvm cookbook.
 - [David Saenz Tagarro] - Removed not necessary attribute `['rvm']['user']['password']`.
                           Refactoring attributes and chefspecs.
 
+0.1.6
+-----
+- [David Saenz Tagarro] - Refactoring from `Mixlib::ShellOut` to execute resources
+- [David Saenz Tagarro] - Refactoring attributes and chefspecs.
+
 - - -
 Check the [Markdown Syntax Guide](http://daringfireball.net/projects/markdown/syntax) for help with Markdown.
 

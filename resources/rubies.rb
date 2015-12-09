@@ -12,14 +12,14 @@ action :create do
   ruby_default = default
 
   execute 'installing_ruby' do
-    environment 'HOME' => home
+    environment 'HOME' => home, 'USER' => user_name
     command "bash -l -c 'rvm autolibs read-fail; rvm install #{ruby_version}'"
     user user_name
     group 'rvm'
   end
 
   execute 'setting_default' do
-    environment 'HOME' => home
+    environment 'HOME' => home, 'USER' => user_name
     command "bash -l -c 'rvm --default use #{ruby_version}'"
     user user_name
     group 'rvm'
@@ -27,8 +27,10 @@ action :create do
   end
 
   execute 'modifying_permissions' do
-    environment 'HOME' => home
-    command "chown -R #{user_name}:rvm #{ENV['HOME']}/.rvm"
+    environment 'HOME' => home, 'USER' => user_name
+    command "chown -R #{user_name}:rvm #{home}/.rvm"
+    user user_name
+    group 'rvm'
     action :run
   end
 end

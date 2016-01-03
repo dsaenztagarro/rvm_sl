@@ -10,16 +10,20 @@ property :user_name, String, default: node['rvm']['user']['name']
 action :create do
   ruby_version = instance_name
   ruby_default = default
+  user_environment = {
+    'HOME' => home,
+    'USER' => user_name
+  }
 
   execute 'installing_ruby' do
-    environment 'HOME' => home, 'USER' => user_name
+    environment user_environment
     command "bash -l -c 'rvm autolibs read-fail; rvm install #{ruby_version}'"
     user user_name
     group 'rvm'
   end
 
   execute 'setting_default' do
-    environment 'HOME' => home, 'USER' => user_name
+    environment user_environment
     command "bash -l -c 'rvm --default use #{ruby_version}'"
     user user_name
     group 'rvm'
@@ -27,7 +31,7 @@ action :create do
   end
 
   execute 'modifying_permissions' do
-    environment 'HOME' => home, 'USER' => user_name
+    environment user_environment
     command "chown -R #{user_name}:rvm #{home}/.rvm"
     user user_name
     group 'rvm'

@@ -12,7 +12,7 @@ action :create do
 
   execute 'installing_gem' do
     environment 'HOME' => home
-    command "bash -l -c 'rvm use #{ruby_version}; gem install #{gem_version}'"
+    command "bash -l -c 'rvm use #{ruby_version}; gem install #{gem_version} --no-ri --no-rdoc'"
     user user_name
     group 'rvm'
   end

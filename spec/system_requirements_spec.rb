@@ -15,7 +15,7 @@ describe 'rvm_sl::system_requirements' do
 
   it 'installs all packages when specifying ruby 2.3.0 dependencies' do
     expect(chef_run).to install_package('installing_ruby230_dependencies').with(
-      package_name: %w(libreadline6-dev zlib1g-dev libssl-dev)
+      package_name: %w(make libreadline6-dev zlib1g-dev libssl-dev)
     )
   end
 

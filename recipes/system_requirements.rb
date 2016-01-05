@@ -30,7 +30,8 @@ package 'installing_ruby_dependencies' do
 end
 
 package 'installing_ruby230_dependencies' do
-  package_name %w(libreadline6-dev
+  package_name %w(make
+                  libreadline6-dev
                   zlib1g-dev
                   libssl-dev)
 end

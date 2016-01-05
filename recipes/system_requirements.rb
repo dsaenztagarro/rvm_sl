@@ -29,6 +29,12 @@ package 'installing_ruby_dependencies' do
                   sqlite3)
 end
 
+package 'installing_ruby230_dependencies' do
+  package_name %w(libreadline6-dev
+                  zlib1g-dev
+                  libssl-dev)
+end
+
 package 'installing_json_gem_dependencies' do
   package_name 'libgmp3-dev'
 end

@@ -13,6 +13,12 @@ describe 'rvm_sl::system_requirements' do
     expect(chef_run).to install_package('installing_ruby_dependencies')
   end
 
+  it 'installs all packages when specifying ruby 2.3.0 dependencies' do
+    expect(chef_run).to install_package('installing_ruby230_dependencies').with(
+      package_name: %w(libreadline6-dev zlib1g-dev libssl-dev)
+    )
+  end
+
   it 'installs all packages when specifying json gem dependencies' do
     expect(chef_run).to install_package('installing_json_gem_dependencies')
   end

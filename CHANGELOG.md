@@ -43,6 +43,10 @@ This file is used to list changes made in each version of the rvm cookbook.
 - Added json gem dependencies to system requirements
 - DRY user environment from resources
 
+0.1.8
+-----
+- Added system requirements for ruby 2.3.0
+
 - - -
 Check the [Markdown Syntax Guide](http://daringfireball.net/projects/markdown/syntax) for help with Markdown.
 

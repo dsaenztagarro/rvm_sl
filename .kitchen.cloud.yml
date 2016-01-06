@@ -8,7 +8,7 @@ provisioner:
 
 platforms:
 - name: ubuntu-14.04
-  driver_plugin: digital_ocean
+  driver_plugin: digitalocean
   driver_config:
     size: 2gb
     image: ubuntu-12-04-x64

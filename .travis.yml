@@ -17,7 +17,7 @@ install:
 - chef exec bundle --version
 - chef exec gem install bundler
 - chef exec bundle --version
-- chef exec bundle config build.nokogiri --use-system-libraries
+- bundle config build.nokogiri --use-system-libraries
 - chef exec bundle install --without development --without chef --without kitchen_vagrant
 branches:
   only:

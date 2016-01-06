@@ -1,5 +1,11 @@
 source 'https://rubygems.org'
 
+# nokogiri locked to chefdk version in ChefDK of Travis CI
+gem 'nokogiri', '1.6.7'
+
+# net-ssh locked to avoid check_version_conflict in Travis CI
+gem 'net-ssh', '2.7'
+
 group :development do
   gem 'travis', '~> 1.8.0'
 end

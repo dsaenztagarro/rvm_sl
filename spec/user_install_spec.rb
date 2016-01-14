@@ -36,6 +36,14 @@ describe 'rvm_sl::user_install' do
     expect(chef_run).to run_execute('bootstraping_bashrc')
   end
 
+  it 'creates a cookbook_file with copying .gemrc' do
+    expect(chef_run).to create_cookbook_file('copying_gemrc').with(
+      user: username,
+      path: File.join(home, '.gemrc'),
+      group: 'rvm'
+    )
+  end
+
   it 'converges successfully' do
     expect { :chef_run }.to_not raise_error
   end

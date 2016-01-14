@@ -46,3 +46,10 @@ execute 'bootstraping_bashrc' do
   group 'rvm'
   not_if 'grep -q rvm $HOME/.bashrc'
 end
+
+cookbook_file 'copying_gemrc' do
+  group 'rvm'
+  path File.join(home, '.gemrc')
+  source 'gemrc'
+  user username
+end

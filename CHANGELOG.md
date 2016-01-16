@@ -54,6 +54,8 @@ This file is used to list changes made in each version of the rvm cookbook.
 2.0.0
 -----
 - Adds `.gemrc` to avoid installing documentation of gems
+- Fix bats integration tests on ruby version
+- Adds serverspec integration tests on `.gemrc` presence
 
 - - -
 Check the [Markdown Syntax Guide](http://daringfireball.net/projects/markdown/syntax) for help with Markdown.

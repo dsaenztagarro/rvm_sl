@@ -51,7 +51,7 @@ This file is used to list changes made in each version of the rvm cookbook.
 -----
 - Fix: system requirements for ruby 2.3.0
 
-2.0.0
+0.2.0
 -----
 - Adds `.gemrc` to avoid installing documentation of gems
 - Fix bats integration tests on ruby version

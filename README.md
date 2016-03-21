@@ -19,12 +19,12 @@ Requirements
 - Chef 12.2.0
 
 #### packages
-- `rvm::user_install` - User installation of rvm
+- `rvm_sl::user_install` - User installation of rvm
 
 Attributes
 ----------
 
-#### rvm::user_install
+#### rvm_sl::user_install
 
 See `attributes/user_install.rb` for default values.
 
@@ -58,15 +58,15 @@ end
 
 Usage
 -----
-#### rvm::user_install
+#### rvm_sl::user_install
 
-Just include `rvm::user_install` in your node's `run_list`:
+Just include `rvm_sl::user_install` in your node's `run_list`:
 
 ```json
 {
   "name":"my_node",
   "run_list": [
-    "recipe[rvm::user_install]"
+    "recipe[rvm_sl::user_install]"
   ]
 }
 ```

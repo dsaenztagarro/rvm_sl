@@ -29,6 +29,7 @@ Attributes
 See `attributes/user_install.rb` for default values.
 
 * `node['rvm']['keyserver']` - Key to import from key server
+* `node['rvm']['keyserver-options']` - Keyserver options to use
 * `node['rvm']['rcev-keys']` - Import the keys with the given key IDs from a keyserver
 * `node['rvm']['user']['name']` - The user name for rvm user install
 * `node['rvm']['user']['home']` - The home of the user

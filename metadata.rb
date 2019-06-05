@@ -4,7 +4,7 @@ maintainer_email 'david.saenz.tagarro@gmail.com'
 license          'All rights reserved'
 description      'Installs/Configures user install of rvm'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
-version          '0.2.0'
+version          '0.2.1'
 
 recipe 'rvm::user_install', 'User installation of rvm'
 

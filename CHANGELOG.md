@@ -57,6 +57,11 @@ This file is used to list changes made in each version of the rvm cookbook.
 - Fix bats integration tests on ruby version
 - Adds serverspec integration tests on `.gemrc` presence
 
+0.2.1
+-----
+- Added attribute for node['rvm']['keyserver-options']
+- Changed only_if on gpg key to check if keys are in keyring
+
 - - -
 Check the [Markdown Syntax Guide](http://daringfireball.net/projects/markdown/syntax) for help with Markdown.
 

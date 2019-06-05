@@ -10,6 +10,7 @@
 username = node['rvm']['user']['name']
 home = node['rvm']['user']['home']
 keyserver = node['rvm']['keyserver']
+keyserver_options = node['rvm']['keyserver-options'].empty? ? '' : "--keyserver-options #{node['rvm']['keyserver-options']} "
 recv_keys = node['rvm']['recv-keys']
 
 include_recipe 'rvm_sl::system_requirements'
@@ -20,12 +21,12 @@ group 'rvm' do
 end
 
 execute 'installing_public_key' do
-  command "gpg --keyserver #{keyserver} --recv-keys #{recv_keys}"
+  command "gpg --keyserver #{keyserver} #{keyserver_options}--recv-keys #{recv_keys}"
   cwd home
   environment 'USER' => username, 'HOME' => home
   group 'rvm'
   user username
-  not_if 'which rvm'
+  not_if "gpg --list-keys #{recv_keys}"
 end
 
 execute 'installing_rvm' do
